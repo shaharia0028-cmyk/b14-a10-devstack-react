@@ -1,0 +1,57 @@
+import type { Technology } from "../types/technology";
+
+interface YourStackProps {
+  stack: Technology[];
+  onRemove: (id: string) => void;
+  onRemoveAll: () => void;
+}
+
+export default function YourStack({ stack, onRemove, onRemoveAll }: YourStackProps) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
+      <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
+      <p className="mt-1 text-sm text-slate-400">
+        {stack.length} Technology Selected
+      </p>
+
+      {stack.length === 0 ? (
+        <p className="mt-8 text-center text-sm text-slate-400">
+          Your stack is empty. Add technologies from the list to start
+          building.
+        </p>
+      ) : (
+        <ul className="mt-5 flex flex-col gap-3">
+          {stack.map((tech) => (
+            <li
+              key={tech.id}
+              className="flex items-center gap-3 rounded-xl border border-slate-100 px-3 py-2.5"
+            >
+              <img src={tech.icon} alt="" className="h-7 w-7 object-contain" />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-semibold text-slate-800">
+                  {tech.name}
+                </p>
+                <p className="text-xs text-slate-400">{tech.category}</p>
+              </div>
+              <button
+                onClick={() => onRemove(tech.id)}
+                aria-label={`Remove ${tech.name} from your stack`}
+                className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-600"
+              >
+                ✕
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <button
+        onClick={onRemoveAll}
+        disabled={stack.length === 0}
+        className="mt-6 w-full rounded-xl border border-rose-200 py-2.5 text-sm font-semibold text-rose-500 transition-colors hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent"
+      >
+        Remove All
+      </button>
+    </div>
+  );
+}
