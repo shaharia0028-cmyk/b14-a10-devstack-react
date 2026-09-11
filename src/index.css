@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
-/* ------------------------------------------------------------------ */
-/* Single source of truth for the brand gradient.                      */
-/* Change these three stops to re-theme the whole UI.                  */
-/* ------------------------------------------------------------------ */
 :root {
-  --brand-start: #f97316; /* orange */
-  --brand-mid: #ec4899; /* pink */
-  --brand-end: #8b5cf6; /* violet */
+  --brand-start: #f97316; 
+  --brand-mid: #ec4899; 
+  --brand-end: #8b5cf6;
   --brand-gradient: linear-gradient(
     90deg,
     var(--brand-start),
@@ -26,7 +22,7 @@ body {
   background-color: #ffffff;
 }
 
-/* Text gradient (brand name, hero highlight) */
+
 .text-brand-gradient {
   background-image: var(--brand-gradient);
   -webkit-background-clip: text;
@@ -34,12 +30,12 @@ body {
   color: transparent;
 }
 
-/* Solid gradient surface (primary buttons, logo mark) */
+
 .bg-brand-gradient {
   background-image: var(--brand-gradient);
 }
 
-/* Focus visibility for keyboard users */
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
