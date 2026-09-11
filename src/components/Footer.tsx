@@ -12,17 +12,16 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-gradient text-sm font-bold text-white">
-                DS
-              </span>
-              <span className="text-lg font-bold tracking-tight">
-                Dev <span className="text-brand-gradient">Stack</span>
-              </span>
+            <div className="flex items-center">
+              <img
+                src="/logo-text.png"
+                alt="Dev Stack"
+                className="h-8 w-auto object-contain"
+              />
             </div>
             <p className="mt-3 max-w-xs text-sm text-slate-500">
-              Curated tools, technologies, and resources for developers
-              building modern software.
+              Curated tools, technologies, and resources for developers building
+              modern software.
             </p>
             <div className="mt-4 flex gap-4 text-sm font-medium text-slate-500">
               {SOCIALS.map((s) => (
@@ -41,7 +40,10 @@ export default function Footer() {
               <ul className="mt-4 flex flex-col gap-2.5">
                 {group.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-sm text-slate-600 hover:text-slate-900">
+                    <a
+                      href="#"
+                      className="text-sm text-slate-600 hover:text-slate-900"
+                    >
                       {link}
                     </a>
                   </li>
