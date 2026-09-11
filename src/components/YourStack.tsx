@@ -8,7 +8,7 @@ interface YourStackProps {
 
 export default function YourStack({ stack, onRemove, onRemoveAll }: YourStackProps) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
+    <div className="self-start rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
       <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
       <p className="mt-1 text-sm text-slate-400">
         {stack.length === 0
