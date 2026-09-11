@@ -11,14 +11,15 @@ export default function YourStack({ stack, onRemove, onRemoveAll }: YourStackPro
     <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:sticky lg:top-24">
       <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
       <p className="mt-1 text-sm text-slate-400">
-        {stack.length} Technology Selected
+        {stack.length === 0
+          ? "No technologies selected yet."
+          : `${stack.length} Technology Selected`}
       </p>
 
       {stack.length === 0 ? (
-        <p className="mt-8 text-center text-sm text-slate-400">
-          Your stack is empty. Add technologies from the list to start
-          building.
-        </p>
+        <div className="mt-5 flex items-center justify-center rounded-xl border border-dashed border-slate-200 py-10">
+          <p className="text-sm text-slate-400">Your stack is empty.</p>
+        </div>
       ) : (
         <ul className="mt-5 flex flex-col gap-3">
           {stack.map((tech) => (
@@ -45,13 +46,14 @@ export default function YourStack({ stack, onRemove, onRemoveAll }: YourStackPro
         </ul>
       )}
 
-      <button
-        onClick={onRemoveAll}
-        disabled={stack.length === 0}
-        className="mt-6 w-full rounded-xl border border-rose-200 py-2.5 text-sm font-semibold text-rose-500 transition-colors hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent"
-      >
-        Remove All
-      </button>
+      {stack.length > 0 && (
+        <button
+          onClick={onRemoveAll}
+          className="mt-6 w-full rounded-xl border border-rose-200 py-2.5 text-sm font-semibold text-rose-500 transition-colors hover:bg-rose-50"
+        >
+          Remove All
+        </button>
+      )}
     </div>
   );
 }
