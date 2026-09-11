@@ -4,13 +4,8 @@ const NAV_LINKS = ["Home", "Technologies", "Projects", "About", "Contact"];
 
 function BrandMark() {
   return (
-    <a href="#top" className="flex items-center gap-2 shrink-0">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-gradient text-sm font-bold text-white">
-        DS
-      </span>
-      <span className="text-lg font-bold tracking-tight">
-        Dev <span className="text-brand-gradient">Stack</span>
-      </span>
+    <a href="#top" className="flex items-center shrink-0">
+      <img src="/logo-text.png" alt="Dev Stack" className="h-8 w-auto object-contain" />
     </a>
   );
 }
