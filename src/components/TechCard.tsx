@@ -17,7 +17,11 @@ export default function TechCard({ tech, added, onAdd }: TechCardProps) {
   const [iconFailed, setIconFailed] = useState(false);
 
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition-shadow hover:shadow-md">
+    <div
+      className={`flex h-full flex-col rounded-2xl border bg-white p-5 transition-colors hover:shadow-md ${
+        added ? "border-emerald-400" : "border-slate-200"
+      }`}
+    >
       <div className="flex items-start justify-between">
         {iconFailed ? (
           <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand-gradient text-sm font-bold text-white">
@@ -53,7 +57,13 @@ export default function TechCard({ tech, added, onAdd }: TechCardProps) {
           {tech.difficulty}
         </span>
         <span className="ml-auto flex items-center gap-1 font-semibold text-slate-700">
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" className="text-amber-400">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="text-amber-400"
+          >
             <path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z" />
           </svg>
           {tech.rating.toFixed(1)}
