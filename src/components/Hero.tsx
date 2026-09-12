@@ -28,37 +28,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex justify-center lg:justify-end">
-        <svg
-          viewBox="0 0 400 340"
-          className="w-full max-w-sm"
-          role="img"
-          aria-label="Illustration of a layered technology stack"
-        >
-          <defs>
-            <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="var(--brand-start)" />
-              <stop offset="50%" stopColor="var(--brand-mid)" />
-              <stop offset="100%" stopColor="var(--brand-end)" />
-            </linearGradient>
-          </defs>
-          <g opacity="0.12">
-            <ellipse cx="200" cy="290" rx="150" ry="30" fill="url(#heroGrad)" />
-          </g>
-          {[0, 1, 2].map((i) => (
-            <g key={i} transform={`translate(0 ${i * 70})`}>
-              <polygon
-                points="200,40 320,80 200,120 80,80"
-                fill="none"
-                stroke="url(#heroGrad)"
-                strokeWidth="2.5"
-                opacity={1 - i * 0.22}
-              />
-            </g>
-          ))}
-          <circle cx="200" cy="80" r="5" fill="var(--brand-mid)" />
-        </svg>
-      </div>
+<div className="flex justify-center lg:justify-end">
+  <img
+    src="/banner-stack.png"
+    alt="Illustration of a layered technology stack"
+    className="w-full max-w-sm object-contain"
+  />
+</div>
     </section>
   );
 }
